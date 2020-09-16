@@ -1,0 +1,281 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: #f4f4f4;
+  font-family: "Helvetica", sans-serif;
+  color: #272727; }
+
+body ul {
+  list-style: none; }
+
+.navbar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  position: absolute;
+  align-items: center;
+  padding: 2rem 5rem;
+  font-weight: 700; }
+  .navbar .logo a {
+    text-decoration: none;
+    font-size: 2.4rem;
+    letter-spacing: 0.5rem;
+    color: #272727; }
+  .navbar nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+    .navbar nav .nav-links a {
+      color: #272727;
+      text-decoration: none;
+      /*&::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 1.8px;
+          bottom: 0;
+          left: 0;
+          background-color: $font-color;
+          visibility: hidden;
+          transform: scaleX(0);
+          transition: all 0.3s ease-in-out 0s;
+        }
+
+        &:hover::before {
+          visibility: visible;
+          transform: scaleX(1);
+        }*/ }
+      .navbar nav .nav-links a:hover {
+        color: #9c9c9c;
+        transition: all 0.3s ease-in-out 0s; }
+    .navbar nav .nav-links ul {
+      display: flex; }
+      .navbar nav .nav-links ul li {
+        margin: 0 1rem; }
+    .navbar nav .nav-ext {
+      display: flex;
+      align-items: center; }
+      .navbar nav .nav-ext a {
+        color: #272727;
+        margin: 0 1rem; }
+      .navbar nav .nav-ext .btn-join {
+        color: #272727;
+        background-color: #f8ca12;
+        padding: 1rem 1rem;
+        text-decoration: none;
+        font-weight: 700; }
+
+/* END OF NAVBAR */
+.banner {
+  display: flex;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../img/barbell-lift.jpg") no-repeat center/cover;
+  height: 125vh; }
+  .banner .banner-container {
+    width: 1365px;
+    margin: auto;
+    /* a {
+      @include primary-button;
+    } */ }
+    .banner .banner-container h1 {
+      font-size: 5rem;
+      width: 50%;
+      margin-bottom: 1rem; }
+    .banner .banner-container p {
+      font-size: 1.5rem;
+      line-height: 1.8;
+      margin-bottom: 6rem; }
+
+/* END OF BANNER */
+.membership {
+  display: flex;
+  height: 90vh; }
+  .membership .membership-container {
+    width: 1365px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); }
+    .membership .membership-container .mem-header h2 {
+      font-size: 5rem; }
+    .membership .membership-container .mem-desc .desc-par {
+      font-size: 1.5rem;
+      line-height: 1.8;
+      margin-bottom: 6rem; }
+    .membership .membership-container .mem-desc .desc-prices {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); }
+      .membership .membership-container .mem-desc .desc-prices h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.2rem; }
+
+/* END OF MEMBERSHIP */
+.classes {
+  display: flex;
+  background: linear-gradient(0deg, rgba(41, 41, 41, 0.8), rgba(41, 41, 41, 0.8)), url("../img/battle-rop.jpg") no-repeat center/cover;
+  height: 100vh; }
+  .classes .classes-container {
+    width: 1365px;
+    margin: auto; }
+    .classes .classes-container .classes-heading {
+      color: #fff;
+      margin-bottom: 4.5rem;
+      text-align: center;
+      font-size: 1.5rem; }
+    .classes .classes-container .flip-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 2rem; }
+      .classes .classes-container .flip-cards .card {
+        perspective: 200rem;
+        -moz-perspective: 150rem;
+        -o-persepctive: 150rem;
+        position: relative;
+        height: 30em; }
+        .classes .classes-container .flip-cards .card .side {
+          color: #fff;
+          height: 30em;
+          transition: all 0.5s ease;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          backface-visibility: hidden;
+          border-radius: 3px;
+          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+          .classes .classes-container .flip-cards .card .side_front-1 {
+            position: relative;
+            background: linear-gradient(to right bottom, #9999d4, blue);
+            padding: 3px; }
+            .classes .classes-container .flip-cards .card .side_front-1 .content {
+              height: calc(30em - 6px);
+              background: linear-gradient(to right bottom, rgba(42, 42, 42, 0.7), rgba(42, 42, 42, 0.9)), url("../img/strength.jpg") no-repeat center/cover;
+              display: flex;
+              justify-content: center;
+              align-items: center; }
+              .classes .classes-container .flip-cards .card .side_front-1 .content h4 {
+                font-size: 1.2rem;
+                letter-spacing: 0.1rem; }
+          .classes .classes-container .flip-cards .card .side_front-2 {
+            position: relative;
+            background: linear-gradient(to right bottom, #9fd6a8, #00ff77);
+            padding: 3px; }
+            .classes .classes-container .flip-cards .card .side_front-2 .content {
+              height: calc(30em - 6px);
+              background: linear-gradient(to right bottom, rgba(42, 42, 42, 0.7), rgba(42, 42, 42, 0.9)), url("../img/endurance.jpg") no-repeat center/cover;
+              display: flex;
+              justify-content: center;
+              align-items: center; }
+              .classes .classes-container .flip-cards .card .side_front-2 .content h4 {
+                font-size: 1.2rem;
+                letter-spacing: 0.1rem; }
+          .classes .classes-container .flip-cards .card .side_front-3 {
+            position: relative;
+            background: linear-gradient(to right bottom, #e4d59b, #f8ca12);
+            padding: 3px; }
+            .classes .classes-container .flip-cards .card .side_front-3 .content {
+              height: calc(30em - 6px);
+              background: linear-gradient(to right bottom, rgba(42, 42, 42, 0.7), rgba(42, 42, 42, 0.9)), url("../img/calisthenics.jpg") no-repeat center/cover;
+              display: flex;
+              justify-content: center;
+              align-items: center; }
+              .classes .classes-container .flip-cards .card .side_front-3 .content h4 {
+                font-size: 1.2rem;
+                letter-spacing: 0.1rem; }
+          .classes .classes-container .flip-cards .card .side_front-4 {
+            position: relative;
+            background: linear-gradient(to right bottom, #dfa3a3, red);
+            padding: 3px; }
+            .classes .classes-container .flip-cards .card .side_front-4 .content {
+              height: calc(30em - 6px);
+              background: linear-gradient(to right bottom, rgba(42, 42, 42, 0.7), rgba(42, 42, 42, 0.9)), url("../img/body-building.jpg") no-repeat center/cover;
+              display: flex;
+              justify-content: center;
+              align-items: center; }
+              .classes .classes-container .flip-cards .card .side_front-4 .content h4 {
+                font-size: 1.2rem;
+                letter-spacing: 0.1rem; }
+          .classes .classes-container .flip-cards .card .side_back {
+            transform: rotateY(180deg); }
+            .classes .classes-container .flip-cards .card .side_back-1 {
+              background: linear-gradient(to right bottom, #9999d4, blue);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              padding: 2.5rem; }
+              .classes .classes-container .flip-cards .card .side_back-1 a {
+                color: #fff;
+                background-color: #2a2a2a;
+                padding: 1rem 2.5rem;
+                text-decoration: none;
+                font-weight: 700;
+                border-radius: 50px; }
+              .classes .classes-container .flip-cards .card .side_back-1 p {
+                font-size: 1.5rem;
+                line-height: 1.8;
+                margin-bottom: 6rem;
+                text-align: center; }
+            .classes .classes-container .flip-cards .card .side_back-2 {
+              background: linear-gradient(to right bottom, #9fd6a8, #00ff77);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              padding: 2.5rem; }
+              .classes .classes-container .flip-cards .card .side_back-2 a {
+                color: #fff;
+                background-color: #2a2a2a;
+                padding: 1rem 2.5rem;
+                text-decoration: none;
+                font-weight: 700;
+                border-radius: 50px; }
+              .classes .classes-container .flip-cards .card .side_back-2 p {
+                font-size: 1.5rem;
+                line-height: 1.8;
+                margin-bottom: 6rem;
+                text-align: center; }
+            .classes .classes-container .flip-cards .card .side_back-3 {
+              background: linear-gradient(to right bottom, #e4d59b, #f8ca12);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              padding: 2.5rem; }
+              .classes .classes-container .flip-cards .card .side_back-3 a {
+                color: #fff;
+                background-color: #2a2a2a;
+                padding: 1rem 2.5rem;
+                text-decoration: none;
+                font-weight: 700;
+                border-radius: 50px; }
+              .classes .classes-container .flip-cards .card .side_back-3 p {
+                font-size: 1.5rem;
+                line-height: 1.8;
+                margin-bottom: 6rem;
+                text-align: center; }
+            .classes .classes-container .flip-cards .card .side_back-4 {
+              background: linear-gradient(to right bottom, #dfa3a3, red);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              padding: 2.5rem; }
+              .classes .classes-container .flip-cards .card .side_back-4 a {
+                color: #fff;
+                background-color: #2a2a2a;
+                padding: 1rem 2.5rem;
+                text-decoration: none;
+                font-weight: 700;
+                border-radius: 50px; }
+              .classes .classes-container .flip-cards .card .side_back-4 p {
+                font-size: 1.5rem;
+                line-height: 1.8;
+                margin-bottom: 6rem;
+                text-align: center; }
+        .classes .classes-container .flip-cards .card:hover .side_front {
+          transform: rotateY(-180deg); }
+        .classes .classes-container .flip-cards .card:hover .side_back {
+          transform: rotateY(0); }

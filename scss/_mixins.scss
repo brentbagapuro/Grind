@@ -1,0 +1,26 @@
+@mixin container {
+  width: 1365px;
+  margin: auto;
+}
+
+@mixin primary-button {
+  color: $font-color;
+  background-color: $primary-color;
+  padding: 1rem 1rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+@mixin secondary-button {
+  color: #fff;
+  background-color: rgb(42, 42, 42);
+  padding: 1rem 2.5rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+@mixin par-style {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  margin-bottom: 6rem;
+}
