@@ -1,0 +1,35 @@
+.membership {
+  display: flex;
+  height: 40rem;
+
+  .membership-container {
+    @include container;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2em;
+
+    .mem-header {
+      h2 {
+        font-size: 5rem;
+      }
+    }
+
+    .mem-desc {
+      .desc-par {
+        @include par-style;
+        margin-bottom: 6rem;
+      }
+
+      .desc-prices {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        h4 {
+          font-size: 1.2rem;
+          margin-bottom: 0.2rem;
+        }
+      }
+    }
+  }
+} /* END OF MEMBERSHIP */

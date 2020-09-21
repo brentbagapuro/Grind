@@ -1,0 +1,35 @@
+footer {
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgb(17, 17, 17);
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2em;
+    padding: 4em;
+    color: white;
+
+    .sched {
+      h2 {
+        font-size: 5rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        @include par-style;
+      }
+    }
+
+    .logo {
+      display: flex;
+      justify-content: flex-end;
+      text-decoration: none;
+      font-size: 2.4rem;
+      letter-spacing: 0.5rem;
+      color: white;
+    }
+  }
+}

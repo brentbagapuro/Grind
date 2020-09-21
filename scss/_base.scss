@@ -1,15 +1,20 @@
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   background-color: $section-color;
   font-family: "Helvetica", sans-serif;
   color: $font-color;
+  width: 100%;
 }
 
 body ul {
   list-style: none;
+}
+
+h4 {
+  font-size: 1.6rem;
 }

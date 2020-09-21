@@ -1,0 +1,44 @@
+.classes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 50rem;
+  margin: 4em 0;
+
+  .classes-container {
+    @include container;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2em;
+
+    .classes-header {
+      h2 {
+        font-size: 5rem;
+      }
+    }
+
+    .classes-desc {
+      .desc-par {
+        @include par-style;
+      }
+    }
+  }
+
+  .list-of-classes {
+    @include container;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2em;
+
+    .class-item {
+      .class-title {
+        margin-bottom: 1em;
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+  }
+} /* END OF CLASSES */

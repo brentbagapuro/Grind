@@ -1,168 +1,38 @@
-.navbar {
-  .logo a {
-    text-decoration: none;
-    font-size: 2.4rem;
-    letter-spacing: 0.5rem;
-    color: $font-color;
-  }
-
-  nav {
-    .nav-links {
-      a {
-        color: $font-color;
-        text-decoration: none;
-
-        &:hover {
-          color: #9c9c9c;
-          transition: all 0.3s ease-in-out 0s;
-        }
-
-        /*&::before {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 1.8px;
-          bottom: 0;
-          left: 0;
-          background-color: $font-color;
-          visibility: hidden;
-          transform: scaleX(0);
-          transition: all 0.3s ease-in-out 0s;
-        }
-
-        &:hover::before {
-          visibility: visible;
-          transform: scaleX(1);
-        }*/
-      }
-
-      ul {
-        display: flex;
-
-        li {
-          margin: 0 1rem;
-        }
-      }
-    }
-
-    .nav-ext {
-      a {
-        color: $font-color;
-        margin: 0 1rem;
-      }
-
-      .btn-join {
-        @include primary-button;
-      }
-
-      display: flex;
-      align-items: center;
-    }
-
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
-  position: absolute;
-  align-items: center;
-  padding: 2rem 5rem;
-  font-weight: 700;
-}
-/* END OF NAVBAR */
-
-.banner {
-  .banner-container {
-    @include container;
-
-    h1 {
-      font-size: 5rem;
-      width: 50%;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      @include par-style;
-    }
-
-    /* a {
-      @include primary-button;
-    } */
-  }
-
+.programs {
   display: flex;
   background: linear-gradient(
       0deg,
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
+      hsla(0, 0%, 16%, 0.8),
+      hsla(0, 0%, 16%, 0.8)
     ),
-    url("../img/barbell-lift.jpg") no-repeat center/cover;
-  height: 125vh;
-} /* END OF BANNER */
+    url("../img/battle-rop.jpg") no-repeat center/cover;
+  height: 50rem;
 
-.membership {
-  .membership-container {
-    @include container;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    .mem-header {
-      h2 {
-        font-size: 5rem;
-      }
-    }
-
-    .mem-desc {
-      .desc-par {
-        @include par-style;
-      }
-
-      .desc-prices {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-
-        h4 {
-          font-size: 1.2rem;
-          margin-bottom: 0.2rem;
-        }
-      }
-    }
-  }
-
-  display: flex;
-  height: 90vh;
-} /* END OF MEMBERSHIP */
-
-.classes {
-  .classes-container {
+  .programs-container {
     @include container;
 
-    .classes-heading {
+    .programs-heading {
       color: #fff;
-      margin-bottom: 4.5rem;
+      margin-bottom: 2em;
       text-align: center;
       font-size: 1.5rem;
     }
 
     .flip-cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: 2rem;
+      display: flex;
+      justify-content: space-between;
 
       .card {
         perspective: 200rem;
         -moz-perspective: 150rem;
         -o-persepctive: 150rem;
         position: relative;
-        height: 30em;
+        width: 100%;
+        margin: 0 1em;
 
         .side {
           color: #fff;
-          height: 30em;
+          height: 100%;
           transition: all 0.5s ease;
           position: absolute;
           top: 0;
@@ -183,7 +53,7 @@
               padding: 3px;
 
               .content {
-                height: calc(30em - 6px);
+                height: calc(100% - 6px);
                 background: linear-gradient(
                     to right bottom,
                     rgba(42, 42, 42, 0.7),
@@ -290,6 +160,14 @@
             transform: rotateY(180deg);
 
             &-1 {
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-evenly;
+              align-items: center;
+              padding: 1.5em;
+              overflow: hidden;
+
               background: linear-gradient(
                 to right bottom,
                 rgb(153, 153, 212),
@@ -305,14 +183,17 @@
                 @include par-style;
                 text-align: center;
               }
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              padding: 2.5rem;
             }
 
             &-2 {
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-evenly;
+              align-items: center;
+              padding: 1.5em;
+              overflow: hidden;
+
               background: linear-gradient(
                 to right bottom,
                 rgb(159, 214, 168),
@@ -328,14 +209,17 @@
                 @include par-style;
                 text-align: center;
               }
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              padding: 2.5rem;
             }
 
             &-3 {
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-evenly;
+              align-items: center;
+              padding: 1.5em;
+              overflow: hidden;
+
               background: linear-gradient(
                 to right bottom,
                 hsl(48, 57%, 75%),
@@ -351,14 +235,17 @@
                 @include par-style;
                 text-align: center;
               }
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              padding: 2.5rem;
             }
 
             &-4 {
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-evenly;
+              align-items: center;
+              padding: 1.5em;
+              overflow: hidden;
+
               background: linear-gradient(
                 to right bottom,
                 rgb(223, 163, 163),
@@ -374,11 +261,6 @@
                 @include par-style;
                 text-align: center;
               }
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              padding: 2.5rem;
             }
           }
         }
@@ -393,13 +275,4 @@
       }
     }
   }
-
-  display: flex;
-  background: linear-gradient(
-      0deg,
-      hsla(0, 0%, 16%, 0.8),
-      hsla(0, 0%, 16%, 0.8)
-    ),
-    url("../img/battle-rop.jpg") no-repeat center/cover;
-  height: 100vh;
 }

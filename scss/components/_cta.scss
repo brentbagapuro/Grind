@@ -1,0 +1,27 @@
+.cta {
+  background: linear-gradient(
+      0deg,
+      hsla(0, 0%, 16%, 0.8),
+      hsla(0, 0%, 16%, 0.8)
+    ),
+    url("../img/cta.jpg") no-repeat center/cover;
+  height: 40rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .cta-container {
+    @include container;
+    text-align: center;
+
+    h2 {
+      color: white;
+      font-size: 5rem;
+      margin-bottom: 1em;
+    }
+
+    a {
+      @include primary-button;
+    }
+  }
+}

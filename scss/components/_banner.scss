@@ -1,0 +1,35 @@
+.banner {
+  display: flex;
+  background: linear-gradient(
+      0deg,
+      hsla(0, 0%, 16%, 0.8),
+      hsla(0, 0%, 16%, 0.8)
+    ),
+    url("../img/barbell-lift.jpg") no-repeat center/cover;
+  height: 50rem;
+
+  .banner-container {
+    padding: 4em;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .heading-wrapper {
+      width: 50rem;
+      color: white;
+
+      h1 {
+        font-size: 5rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        @include par-style;
+      }
+
+      /* a {
+          @include primary-button;
+        } */
+    }
+  }
+} /* END OF BANNER */
