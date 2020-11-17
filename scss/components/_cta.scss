@@ -5,10 +5,7 @@
       hsla(0, 0%, 16%, 0.8)
     ),
     url("../img/cta.jpg") no-repeat center/cover;
-  height: 40rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 10em 0;
 
   .cta-container {
     @include container;
@@ -16,7 +13,6 @@
 
     h2 {
       color: white;
-      font-size: 5rem;
       margin-bottom: 1em;
     }
 

@@ -6,6 +6,11 @@
   padding: 2em 4em;
   font-weight: 700;
 
+  .nav-toggle,
+  .nav-toggle-label {
+    display: none;
+  }
+
   .logo {
     text-decoration: none;
     font-size: 2.4rem;
@@ -26,24 +31,6 @@
           color: $primary-color;
           transition: all 0.2s ease-in-out 0s;
         }
-
-        /*&::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 1.8px;
-            bottom: 0;
-            left: 0;
-            background-color: $font-color;
-            visibility: hidden;
-            transform: scaleX(0);
-            transition: all 0.3s ease-in-out 0s;
-          }
-  
-          &:hover::before {
-            visibility: visible;
-            transform: scaleX(1);
-          }*/
       }
 
       ul {
@@ -71,3 +58,96 @@
   }
 }
 /* END OF NAVBAR */
+
+/* MEDIA QUERY */
+@media screen and (max-width: 900px) {
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    z-index: 999;
+
+    .nav-toggle {
+      display: none;
+    }
+
+    .nav-toggle-label {
+      display: block;
+      color: white;
+      position: absolute;
+      right: 4em;
+      top: 3.4em;
+    }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      display: block;
+      background: white;
+      height: 3px;
+      width: 2em;
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      content: "";
+      position: absolute;
+    }
+
+    .nav-toggle:checked ~ nav {
+      transform: scale(1, 1);
+    }
+
+    .nav-toggle:checked ~ nav li {
+      opacity: 1;
+      transition: opacity 250ms ease-in-out 250ms;
+    }
+
+    .nav-toggle:checked ~ nav .nav-ext {
+      opacity: 1;
+      transition: opacity 250ms ease-in-out 250ms;
+    }
+
+    .nav-toggle-label span::before {
+      bottom: 7px;
+    }
+
+    .nav-toggle-label span::after {
+      top: 7px;
+    }
+
+    nav {
+      transform: scale(1, 0);
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      top: 6.72em;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      width: 100%;
+      padding-bottom: 3em;
+      transform-origin: top;
+      transition: transform 400ms ease-in-out;
+
+      .nav-links ul {
+        display: block;
+        margin-right: 5em;
+        margin-top: 1em;
+
+        li {
+          margin-bottom: 3em;
+          opacity: 0;
+          transition: opacity 150ms ease-in-out;
+        }
+      }
+
+      .nav-ext {
+        margin-right: 5em;
+        opacity: 0;
+        transition: opacity 150ms ease-in-out;
+      }
+    }
+  }
+}

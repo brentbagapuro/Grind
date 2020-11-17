@@ -1,32 +1,40 @@
 .membership {
-  display: flex;
-  height: 40rem;
+  height: auto;
+  padding: 2em 0;
 
   .membership-container {
     @include container;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    //grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     grid-gap: 2em;
 
-    .mem-header {
+    /*.mem-header {
       h2 {
         font-size: 5rem;
       }
-    }
+    }*/
 
     .mem-desc {
       .desc-par {
-        @include par-style;
-        margin-bottom: 6rem;
+        margin-bottom: 2.5rem;
       }
 
       .desc-prices {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        padding-right: 25%;
 
-        h4 {
-          font-size: 1.2rem;
+        .price1 {
+          margin-right: 2rem;
+        }
+
+        .price-header {
+          margin-top: 2rem;
+        }
+
+        h5 {
           margin-bottom: 0.2rem;
         }
       }

@@ -1,26 +1,30 @@
 .programs {
-  display: flex;
   background: linear-gradient(
       0deg,
       hsla(0, 0%, 16%, 0.8),
       hsla(0, 0%, 16%, 0.8)
     ),
     url("../img/battle-rop.jpg") no-repeat center/cover;
-  height: 50rem;
+  height: auto;
 
   .programs-container {
     @include container;
 
     .programs-heading {
       color: #fff;
-      margin-bottom: 2em;
+      margin-bottom: 4em;
       text-align: center;
       font-size: 1.5rem;
     }
 
+    .media-cards {
+      display: none;
+    }
+
     .flip-cards {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+      grid-gap: 2em;
 
       .card {
         perspective: 200rem;
@@ -32,7 +36,6 @@
 
         .side {
           color: #fff;
-          height: 100%;
           transition: all 0.5s ease;
           position: absolute;
           top: 0;
@@ -53,7 +56,9 @@
               padding: 3px;
 
               .content {
-                height: calc(100% - 6px);
+                padding: calc(75% - 6px) 1em;
+                min-height: 18rem;
+                min-width: 13rem;
                 background: linear-gradient(
                     to right bottom,
                     rgba(42, 42, 42, 0.7),
@@ -64,8 +69,7 @@
                 justify-content: center;
                 align-items: center;
 
-                h4 {
-                  font-size: 1.2rem;
+                h6 {
                   letter-spacing: 0.1rem;
                 }
               }
@@ -81,7 +85,9 @@
               padding: 3px;
 
               .content {
-                height: calc(30em - 6px);
+                padding: calc(75% - 6px) 1em;
+                min-height: 18rem;
+                min-width: 13rem;
                 background: linear-gradient(
                     to right bottom,
                     rgba(42, 42, 42, 0.7),
@@ -92,8 +98,7 @@
                 justify-content: center;
                 align-items: center;
 
-                h4 {
-                  font-size: 1.2rem;
+                h6 {
                   letter-spacing: 0.1rem;
                 }
               }
@@ -109,7 +114,9 @@
               padding: 3px;
 
               .content {
-                height: calc(30em - 6px);
+                padding: calc(75% - 6px) 1em;
+                min-height: 18rem;
+                min-width: 13rem;
                 background: linear-gradient(
                     to right bottom,
                     rgba(42, 42, 42, 0.7),
@@ -120,8 +127,7 @@
                 justify-content: center;
                 align-items: center;
 
-                h4 {
-                  font-size: 1.2rem;
+                h6 {
                   letter-spacing: 0.1rem;
                 }
               }
@@ -137,7 +143,9 @@
               padding: 3px;
 
               .content {
-                height: calc(30em - 6px);
+                padding: calc(75% - 6px) 1em;
+                min-height: 18rem;
+                min-width: 13rem;
                 background: linear-gradient(
                     to right bottom,
                     rgba(42, 42, 42, 0.7),
@@ -147,9 +155,9 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                text-align: center;
 
-                h4 {
-                  font-size: 1.2rem;
+                h6 {
                   letter-spacing: 0.1rem;
                 }
               }
@@ -180,7 +188,6 @@
               }
 
               p {
-                @include par-style;
                 text-align: center;
               }
             }
@@ -206,7 +213,6 @@
               }
 
               p {
-                @include par-style;
                 text-align: center;
               }
             }
@@ -232,7 +238,6 @@
               }
 
               p {
-                @include par-style;
                 text-align: center;
               }
             }
@@ -258,7 +263,6 @@
               }
 
               p {
-                @include par-style;
                 text-align: center;
               }
             }
@@ -271,6 +275,85 @@
 
         &:hover .side_back {
           transform: rotateY(0);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .flip-cards {
+    display: none !important;
+  }
+
+  .media-cards {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    grid-gap: 2em;
+
+    .card {
+      position: relative;
+      width: 100%;
+      margin: 0 1em;
+
+      .card-img {
+        &__1 {
+          height: 15rem;
+          background: linear-gradient(
+              to right bottom,
+              rgba(153, 153, 212, 0.7),
+              rgba(0, 0, 255, 0.9)
+            ),
+            url("../img/strength.jpg") no-repeat center/cover;
+        }
+
+        &__2 {
+          height: 15rem;
+          background: linear-gradient(
+              to right bottom,
+              rgba(159, 214, 168, 0.7),
+              rgba(0, 255, 119, 0.9)
+            ),
+            url("../img/endurance.jpg") no-repeat center/cover;
+        }
+
+        &__3 {
+          height: 15rem;
+          background: linear-gradient(
+              to right bottom,
+              hsla(48, 57%, 75%, 0.7),
+              hsla(48, 94%, 52%, 0.9)
+            ),
+            url("../img/calisthenics.jpg") no-repeat center/cover;
+        }
+
+        &__4 {
+          height: 15rem;
+          background: linear-gradient(
+              to right bottom,
+              rgba(223, 163, 163, 0.7),
+              rgba(255, 0, 0, 0.9)
+            ),
+            url("../img/body-building.jpg") no-repeat center/cover;
+        }
+      }
+
+      .content {
+        background-color: white;
+        color: $font-color;
+        padding: 2.5em;
+        min-height: 24rem;
+
+        h4 {
+          margin-bottom: 1em;
+        }
+
+        p {
+          margin-bottom: 2em;
+        }
+
+        a {
+          @include secondary-button;
         }
       }
     }

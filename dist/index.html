@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!--
+
+    List of things to do
+    1. Fix facilities to show responsive lightbox
+    2. Navigation smooth scroll
+    3. Button hover
+
+  -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <title>Grind Fitness & Strength Training Studio</title>
   </head>
   <body>
     <!-- NAVBAR -->
     <div class="navbar">
       <div class="logo">GRIND</div>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
 
       <nav>
         <div class="nav-links">
@@ -32,6 +39,9 @@
           ></a> -->
         </div>
       </nav>
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
     </div>
     <!-- END OF NAVBAR -->
 
@@ -51,7 +61,7 @@
     <!-- END OF BANNER -->
 
     <!-- MEMBERSHIP -->
-    <section class="membership">
+    <section class="membership" id="membership">
       <div class="membership-container">
         <div class="mem-header"><h2>Membership</h2></div>
         <div class="mem-desc">
@@ -64,17 +74,17 @@
           </div>
           <div class="desc-prices">
             <div class="price1">
-              <h4>Ulimited Membership</h4>
+              <h6 class="price-header">Ulimited Membership</h6>
               <br />
-              <h4>$12 - All-day Pass</h4>
-              <h4>$79 - Monthly Unlimited</h4>
+              <h6>$12 - All-day Pass</h6>
+              <h6>$79 - Monthly Unlimited</h6>
             </div>
             <div class="price2">
-              <h4>Drop-in Classes</h4>
+              <h6 class="price-header">Drop-in Classes</h6>
               <br />
-              <h4>$15 - Single Class</h4>
-              <h4>$60 - 5 Class Package</h4>
-              <h4>$95 - 10 Class Package</h4>
+              <h6>$15 - Single Class</h6>
+              <h6>$60 - 5 Class Package</h6>
+              <h6>$95 - 10 Class Package</h6>
             </div>
           </div>
         </div>
@@ -83,7 +93,7 @@
     <!-- END OF MEMBERSHIP -->
 
     <!-- PROGRAMS -->
-    <section class="programs">
+    <section class="programs" id="programs">
       <div class="programs-container">
         <div class="programs-heading">
           <h2>Choose your program</h2>
@@ -146,13 +156,68 @@
             </div>
           </div>
         </div>
+
+        <div class="media-cards">
+          <div class="card">
+            <div class="card-img">
+              <div class="card-img__1"></div>
+            </div>
+            <div class="content">
+              <h4>STRENGTH</h4>
+              <p>
+                Lift heavier and heavier and go even above your limits as you
+                train to get stronger
+              </p>
+              <a href="#contact">JOIN NOW</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img">
+              <div class="card-img__2"></div>
+            </div>
+            <div class="content">
+              <h4>ENDURANCE</h4>
+              <p>
+                Last longer in any aerobic exercise with our circuits that show
+                you no mercy
+              </p>
+              <a href="#contact">JOIN NOW</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img">
+              <div class="card-img__3"></div>
+            </div>
+            <div class="content">
+              <h4>CALISTHENICS</h4>
+              <p>
+                Master your body and learn to develop superhuman strength with
+                just your body weight
+              </p>
+              <a href="#contact">JOIN NOW</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img">
+              <div class="card-img__4"></div>
+            </div>
+            <div class="content">
+              <h4>BODY BUILDING</h4>
+              <p>Sculpt your muscles and look like a greek god</p>
+              <a href="#contact">JOIN NOW</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <!-- END OF PROGRAMS -->
 
     <!-- CLASSES -->
     <section>
-      <div class="classes">
+      <div class="classes" id="classes">
         <div class="classes-container">
           <div class="classes-header"><h2>Classes</h2></div>
           <div class="classes-desc">
@@ -176,7 +241,7 @@
 
             <p>12pm - 12:45pm</p>
             <p><strong>Mondays, Thursdays</strong></p>
-            <p>
+            <p class="class-item__desc">
               11pm - 11:45pm<br /><br />By combining battle ropes, pulleys, and
               rope climbing, this beginner level class will help you grow
               muscle, build endurance, and put your metabolism to work.
@@ -187,7 +252,7 @@
             <p><strong>Tuesdays, Fridays</strong></p>
             <p>8am – 9am</p>
             <p><strong>Sundays</strong></p>
-            <p>
+            <p class="class-item__desc">
               10am – 11am<br /><br />Here we incorporate cardio intervals
               between rope exercises to help you build leaner muscles. This
               class is for those who have taken at least four sessions of Pull
@@ -199,7 +264,7 @@
             <p><strong>Tuesdays, Thursdays</strong></p>
             <p>5pm – 6pm</p>
             <p><strong>Saturdays</strong></p>
-            <p>
+            <p class="class-item__desc">
               9am – 10am<br /><br />Here, we combine free weights with squats,
               lunges, and high-interval exercises so that you can build strength
               according to your own body type and goals.
@@ -210,7 +275,7 @@
               <strong>Strength & Cardio Circuit</strong>
             </p>
             <p><strong>Mondays, Wednesdays, Fridays</strong></p>
-            <p>
+            <p class="class-item__desc">
               1pm – 1:45pm<br /><br />Welcome to your perfect lunch break
               workout. During this short class, we do a series of intense
               cross-training moves with bursts of aerobic exercise, weight
@@ -254,19 +319,41 @@
       <div class="facilities">
         <div class="facilities-container">
           <div class="gallery">
-            <img src="./img/facilities/dumbells.jpg" alt="dumbells" />
-            <img src="./img/facilities/cable-handle.jpg" alt="cable-handle" />
-            <img src="./img/facilities/bench.jpg" alt="bench" />
-            <img src="./img/facilities/dumbells3.jpg" alt="dumbells3" />
-            <img src="./img/facilities/chair.jpg" alt="chair" />
-            <img src="./img/facilities/rope.jpg" alt="rope" />
-            <img src="./img/facilities/dumbells2.jpg" alt="dumbells2" />
-            <img src="./img/facilities/bike.jpg" alt="bike" />
-            <img src="./img/facilities/rings.jpg" alt="rings" />
-            <img src="./img/facilities/hall.jpg" alt="hall" />
-            <img src="./img/facilities/hall2.jpg" alt="hall2" />
-            <img src="./img/facilities/mats.jpg" alt="mats" />
-            <img src="./img/facilities/misc.jpg" alt="misc" />
+            <img src="./img/facilities/dumbells.jpg" alt="dumbells" onClick="imgClick(this)" />
+            <img src="./img/facilities/cable-handle.jpg" alt="cable-handle" onClick="imgClick(this)" />
+            <img src="./img/facilities/bench.jpg" alt="bench" onClick="imgClick(this)" />
+            <img src="./img/facilities/dumbells3.jpg" alt="dumbells3" onClick="imgClick(this)" />
+            <img src="./img/facilities/chair.jpg" alt="chair" onClick="imgClick(this)" />
+            <img src="./img/facilities/rope.jpg" alt="rope" onClick="imgClick(this)" />
+            <img src="./img/facilities/dumbells2.jpg" alt="dumbells2" onClick="imgClick(this)" />
+            <img src="./img/facilities/bike.jpg" alt="bike" onClick="imgClick(this)" />
+            <img src="./img/facilities/rings.jpg" alt="rings" onClick="imgClick(this)" />
+            <img src="./img/facilities/hall.jpg" alt="hall" onClick="imgClick(this)" />
+            <img src="./img/facilities/hall2.jpg" alt="hall2" onClick="imgClick(this)" />
+            <img src="./img/facilities/mats.jpg" alt="mats" onClick="imgClick(this)" />
+            <img src="./img/facilities/misc.jpg" alt="misc" onClick="imgClick(this)" />
+          </div>
+
+          <div class="slideshow">
+            <div class="slide">
+              <i class="fas fa-angle-left" onClick="slideLeft()"></i>
+              <div class="slide-image">
+                <img src="./img/facilities/dumbells.jpg" alt="dumbells" onClick="imgClick(this)" />
+                <img src="./img/facilities/cable-handle.jpg" alt="cable-handle" onClick="imgClick(this)" />
+                <img src="./img/facilities/bench.jpg" alt="bench" onClick="imgClick(this)" />
+                <img src="./img/facilities/dumbells3.jpg" alt="dumbells3" onClick="imgClick(this)" />
+                <img src="./img/facilities/chair.jpg" alt="chair" onClick="imgClick(this)" />
+                <img src="./img/facilities/rope.jpg" alt="rope" onClick="imgClick(this)" />
+                <img src="./img/facilities/dumbells2.jpg" alt="dumbells2" onClick="imgClick(this)" />
+                <img src="./img/facilities/bike.jpg" alt="bike" onClick="imgClick(this)" />
+                <img src="./img/facilities/rings.jpg" alt="rings" onClick="imgClick(this)" />
+                <img src="./img/facilities/hall.jpg" alt="hall" onClick="imgClick(this)" />
+                <img src="./img/facilities/hall2.jpg" alt="hall2" onClick="imgClick(this)" />
+                <img src="./img/facilities/mats.jpg" alt="mats" onClick="imgClick(this)" />
+                <img src="./img/facilities/misc.jpg" alt="misc" onClick="imgClick(this)" />
+              </div>
+              <i class="fas fa-angle-right" onClick="slideRight()"></i>
+            </div>
           </div>
         </div>
       </div>
@@ -275,12 +362,12 @@
 
     <!-- CONTACT -->
     <section>
-      <div class="contact">
+      <div class="contact" id="contact">
         <div class="contact-container">
           <div class="contact-form">
             <h2>Join Us</h2>
             <form action="#">
-              <label class="label-title">Name *</label>
+              <p class="label-title">Name *</p>
               <div class="name">
                 <div class="first-name">
                   <input type="text" required />
@@ -292,7 +379,7 @@
                 </div>
               </div>
 
-              <label class="label-title">Email *</label>
+              <p class="label-title">Email *</p>
               <div class="email">
                 <input type="email" required />
               </div>
@@ -329,5 +416,14 @@
       </div>
     </footer>
     <!-- END OF FOOTER -->
+
+    <div class="image-lightbox">
+      <div class="background">
+        <div class="image">
+        </div>
+      </div>
+    </div>
+
+    <script src="App.js"></script>
   </body>
 </html>

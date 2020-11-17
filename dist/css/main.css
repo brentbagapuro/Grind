@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box; }
 
+html {
+  scroll-behavior: smooth; }
+
 body {
   background-color: #f4f4f4;
   font-family: "Helvetica", sans-serif;
@@ -12,8 +15,36 @@ body {
 body ul {
   list-style: none; }
 
+h1,
+h2 {
+  font-size: 5rem; }
+
 h4 {
   font-size: 1.6rem; }
+
+h6 {
+  font-size: 1.2rem; }
+
+label {
+  font-size: 1rem; }
+
+p {
+  font-size: 1.5rem;
+  line-height: 1.8; }
+
+@media screen and (max-width: 700px) {
+  h1,
+  h2 {
+    font-size: 4rem; }
+  h4 {
+    font-size: 1.6rem; }
+  h6 {
+    font-size: 1.2rem; }
+  label {
+    font-size: 1rem; }
+  p {
+    font-size: 1.5rem;
+    line-height: 1.8; } }
 
 .navbar {
   display: flex;
@@ -22,6 +53,9 @@ h4 {
   position: absolute;
   padding: 2em 4em;
   font-weight: 700; }
+  .navbar .nav-toggle,
+  .navbar .nav-toggle-label {
+    display: none; }
   .navbar .logo {
     text-decoration: none;
     font-size: 2.4rem;
@@ -32,24 +66,7 @@ h4 {
     align-items: center; }
     .navbar nav .nav-links a {
       color: white;
-      text-decoration: none;
-      /*&::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 1.8px;
-            bottom: 0;
-            left: 0;
-            background-color: $font-color;
-            visibility: hidden;
-            transform: scaleX(0);
-            transition: all 0.3s ease-in-out 0s;
-          }
-  
-          &:hover::before {
-            visibility: visible;
-            transform: scaleX(1);
-          }*/ }
+      text-decoration: none; }
       .navbar nav .nav-links a:hover {
         color: #f8ca12;
         transition: all 0.2s ease-in-out 0s; }
@@ -72,6 +89,71 @@ h4 {
         font-weight: 700; }
 
 /* END OF NAVBAR */
+/* MEDIA QUERY */
+@media screen and (max-width: 900px) {
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    z-index: 999; }
+    .navbar .nav-toggle {
+      display: none; }
+    .navbar .nav-toggle-label {
+      display: block;
+      color: white;
+      position: absolute;
+      right: 4em;
+      top: 3.4em; }
+    .navbar .nav-toggle-label span,
+    .navbar .nav-toggle-label span::before,
+    .navbar .nav-toggle-label span::after {
+      display: block;
+      background: white;
+      height: 3px;
+      width: 2em;
+      border-radius: 2px;
+      position: relative; }
+    .navbar .nav-toggle-label span::before,
+    .navbar .nav-toggle-label span::after {
+      content: "";
+      position: absolute; }
+    .navbar .nav-toggle:checked ~ nav {
+      transform: scale(1, 1); }
+    .navbar .nav-toggle:checked ~ nav li {
+      opacity: 1;
+      transition: opacity 250ms ease-in-out 250ms; }
+    .navbar .nav-toggle:checked ~ nav .nav-ext {
+      opacity: 1;
+      transition: opacity 250ms ease-in-out 250ms; }
+    .navbar .nav-toggle-label span::before {
+      bottom: 7px; }
+    .navbar .nav-toggle-label span::after {
+      top: 7px; }
+    .navbar nav {
+      transform: scale(1, 0);
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      top: 6.72em;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      width: 100%;
+      padding-bottom: 3em;
+      transform-origin: top;
+      transition: transform 400ms ease-in-out; }
+      .navbar nav .nav-links ul {
+        display: block;
+        margin-right: 5em;
+        margin-top: 1em; }
+        .navbar nav .nav-links ul li {
+          margin-bottom: 3em;
+          opacity: 0;
+          transition: opacity 150ms ease-in-out; }
+      .navbar nav .nav-ext {
+        margin-right: 5em;
+        opacity: 0;
+        transition: opacity 150ms ease-in-out; } }
+
 .banner {
   display: flex;
   background: linear-gradient(0deg, rgba(41, 41, 41, 0.8), rgba(41, 41, 41, 0.8)), url("../img/barbell-lift.jpg") no-repeat center/cover;
@@ -88,54 +170,57 @@ h4 {
           @include primary-button;
         } */ }
       .banner .banner-container .heading-wrapper h1 {
-        font-size: 5rem;
         margin-bottom: 1rem; }
-      .banner .banner-container .heading-wrapper p {
-        font-size: 1.5rem;
-        line-height: 1.8; }
 
 /* END OF BANNER */
 .membership {
-  display: flex;
-  height: 40rem; }
+  height: auto;
+  padding: 2em 0; }
   .membership .membership-container {
     padding: 4em;
     margin: auto;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2em; }
-    .membership .membership-container .mem-header h2 {
-      font-size: 5rem; }
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-gap: 2em;
+    /*.mem-header {
+      h2 {
+        font-size: 5rem;
+      }
+    }*/ }
     .membership .membership-container .mem-desc .desc-par {
-      font-size: 1.5rem;
-      line-height: 1.8;
-      margin-bottom: 6rem; }
+      margin-bottom: 2.5rem; }
     .membership .membership-container .mem-desc .desc-prices {
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap; }
-      .membership .membership-container .mem-desc .desc-prices h4 {
-        font-size: 1.2rem;
+      flex-wrap: wrap;
+      padding-right: 25%; }
+      .membership .membership-container .mem-desc .desc-prices .price1 {
+        margin-right: 2rem; }
+      .membership .membership-container .mem-desc .desc-prices .price-header {
+        margin-top: 2rem; }
+      .membership .membership-container .mem-desc .desc-prices h5 {
         margin-bottom: 0.2rem; }
 
 /* END OF MEMBERSHIP */
 .programs {
-  display: flex;
   background: linear-gradient(0deg, rgba(41, 41, 41, 0.8), rgba(41, 41, 41, 0.8)), url("../img/battle-rop.jpg") no-repeat center/cover;
-  height: 50rem; }
+  height: auto; }
   .programs .programs-container {
     padding: 4em;
     margin: auto;
     width: 100%; }
     .programs .programs-container .programs-heading {
       color: #fff;
-      margin-bottom: 2em;
+      margin-bottom: 4em;
       text-align: center;
       font-size: 1.5rem; }
+    .programs .programs-container .media-cards {
+      display: none; }
     .programs .programs-container .flip-cards {
-      display: flex;
-      justify-content: space-between; }
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+      grid-gap: 2em; }
       .programs .programs-container .flip-cards .card {
         perspective: 200rem;
         -moz-perspective: 150rem;
@@ -145,7 +230,6 @@ h4 {
         margin: 0 1em; }
         .programs .programs-container .flip-cards .card .side {
           color: #fff;
-          height: 100%;
           transition: all 0.5s ease;
           position: absolute;
           top: 0;
@@ -159,52 +243,57 @@ h4 {
             background: linear-gradient(to right bottom, #9999d4, blue);
             padding: 3px; }
             .programs .programs-container .flip-cards .card .side_front-1 .content {
-              height: calc(100% - 6px);
+              padding: calc(75% - 6px) 1em;
+              min-height: 18rem;
+              min-width: 13rem;
               background: linear-gradient(to right bottom, rgba(42, 42, 42, 0.7), rgba(42, 42, 42, 0.9)), url("../img/strength.jpg") no-repeat center/cover;
               display: flex;
               justify-content: center;
               align-items: center; }
-              .programs .programs-container .flip-cards .card .side_front-1 .content h4 {
-                font-size: 1.2rem;
+              .programs .programs-container .flip-cards .card .side_front-1 .content h6 {
                 letter-spacing: 0.1rem; }
           .programs .programs-container .flip-cards .card .side_front-2 {
             position: relative;
             background: linear-gradient(to right bottom, #9fd6a8, #00ff77);
             padding: 3px; }
             .programs .programs-container .flip-cards .card .side_front-2 .content {
-              height: calc(30em - 6px);
+              padding: calc(75% - 6px) 1em;
+              min-height: 18rem;
+              min-width: 13rem;
               background: linear-gradient(to right bottom, rgba(42, 42, 42, 0.7), rgba(42, 42, 42, 0.9)), url("../img/endurance.jpg") no-repeat center/cover;
               display: flex;
               justify-content: center;
               align-items: center; }
-              .programs .programs-container .flip-cards .card .side_front-2 .content h4 {
-                font-size: 1.2rem;
+              .programs .programs-container .flip-cards .card .side_front-2 .content h6 {
                 letter-spacing: 0.1rem; }
           .programs .programs-container .flip-cards .card .side_front-3 {
             position: relative;
             background: linear-gradient(to right bottom, #e4d59b, #f8ca12);
             padding: 3px; }
             .programs .programs-container .flip-cards .card .side_front-3 .content {
-              height: calc(30em - 6px);
+              padding: calc(75% - 6px) 1em;
+              min-height: 18rem;
+              min-width: 13rem;
               background: linear-gradient(to right bottom, rgba(42, 42, 42, 0.7), rgba(42, 42, 42, 0.9)), url("../img/calisthenics.jpg") no-repeat center/cover;
               display: flex;
               justify-content: center;
               align-items: center; }
-              .programs .programs-container .flip-cards .card .side_front-3 .content h4 {
-                font-size: 1.2rem;
+              .programs .programs-container .flip-cards .card .side_front-3 .content h6 {
                 letter-spacing: 0.1rem; }
           .programs .programs-container .flip-cards .card .side_front-4 {
             position: relative;
             background: linear-gradient(to right bottom, #dfa3a3, red);
             padding: 3px; }
             .programs .programs-container .flip-cards .card .side_front-4 .content {
-              height: calc(30em - 6px);
+              padding: calc(75% - 6px) 1em;
+              min-height: 18rem;
+              min-width: 13rem;
               background: linear-gradient(to right bottom, rgba(42, 42, 42, 0.7), rgba(42, 42, 42, 0.9)), url("../img/body-building.jpg") no-repeat center/cover;
               display: flex;
               justify-content: center;
-              align-items: center; }
-              .programs .programs-container .flip-cards .card .side_front-4 .content h4 {
-                font-size: 1.2rem;
+              align-items: center;
+              text-align: center; }
+              .programs .programs-container .flip-cards .card .side_front-4 .content h6 {
                 letter-spacing: 0.1rem; }
           .programs .programs-container .flip-cards .card .side_back {
             transform: rotateY(180deg); }
@@ -226,8 +315,6 @@ h4 {
                 font-weight: 700;
                 border-radius: 50px; }
               .programs .programs-container .flip-cards .card .side_back-1 p {
-                font-size: 1.5rem;
-                line-height: 1.8;
                 text-align: center; }
             .programs .programs-container .flip-cards .card .side_back-2 {
               height: 100%;
@@ -247,8 +334,6 @@ h4 {
                 font-weight: 700;
                 border-radius: 50px; }
               .programs .programs-container .flip-cards .card .side_back-2 p {
-                font-size: 1.5rem;
-                line-height: 1.8;
                 text-align: center; }
             .programs .programs-container .flip-cards .card .side_back-3 {
               height: 100%;
@@ -268,8 +353,6 @@ h4 {
                 font-weight: 700;
                 border-radius: 50px; }
               .programs .programs-container .flip-cards .card .side_back-3 p {
-                font-size: 1.5rem;
-                line-height: 1.8;
                 text-align: center; }
             .programs .programs-container .flip-cards .card .side_back-4 {
               height: 100%;
@@ -289,94 +372,159 @@ h4 {
                 font-weight: 700;
                 border-radius: 50px; }
               .programs .programs-container .flip-cards .card .side_back-4 p {
-                font-size: 1.5rem;
-                line-height: 1.8;
                 text-align: center; }
         .programs .programs-container .flip-cards .card:hover .side_front {
           transform: rotateY(-180deg); }
         .programs .programs-container .flip-cards .card:hover .side_back {
           transform: rotateY(0); }
 
+@media screen and (max-width: 1025px) {
+  .flip-cards {
+    display: none !important; }
+  .media-cards {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    grid-gap: 2em; }
+    .media-cards .card {
+      position: relative;
+      width: 100%;
+      margin: 0 1em; }
+      .media-cards .card .card-img__1 {
+        height: 15rem;
+        background: linear-gradient(to right bottom, rgba(153, 153, 212, 0.7), rgba(0, 0, 255, 0.9)), url("../img/strength.jpg") no-repeat center/cover; }
+      .media-cards .card .card-img__2 {
+        height: 15rem;
+        background: linear-gradient(to right bottom, rgba(159, 214, 168, 0.7), rgba(0, 255, 119, 0.9)), url("../img/endurance.jpg") no-repeat center/cover; }
+      .media-cards .card .card-img__3 {
+        height: 15rem;
+        background: linear-gradient(to right bottom, rgba(228, 213, 155, 0.7), rgba(248, 202, 18, 0.9)), url("../img/calisthenics.jpg") no-repeat center/cover; }
+      .media-cards .card .card-img__4 {
+        height: 15rem;
+        background: linear-gradient(to right bottom, rgba(223, 163, 163, 0.7), rgba(255, 0, 0, 0.9)), url("../img/body-building.jpg") no-repeat center/cover; }
+      .media-cards .card .content {
+        background-color: white;
+        color: #272727;
+        padding: 2.5em;
+        min-height: 24rem; }
+        .media-cards .card .content h4 {
+          margin-bottom: 1em; }
+        .media-cards .card .content p {
+          margin-bottom: 2em; }
+        .media-cards .card .content a {
+          color: #fff;
+          background-color: #2a2a2a;
+          padding: 1rem 2.5rem;
+          text-decoration: none;
+          text-align: center;
+          font-weight: 700; } }
+
 .classes {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 50rem;
-  margin: 4em 0; }
+  height: auto;
+  padding: 2em 0; }
   .classes .classes-container {
     padding: 4em;
     margin: auto;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     grid-gap: 2em; }
-    .classes .classes-container .classes-header h2 {
-      font-size: 5rem; }
-    .classes .classes-container .classes-desc .desc-par {
-      font-size: 1.5rem;
-      line-height: 1.8; }
   .classes .list-of-classes {
     padding: 4em;
     margin: auto;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     grid-gap: 2em; }
     .classes .list-of-classes .class-item .class-title {
       margin-bottom: 1em; }
+    .classes .list-of-classes .class-item__desc {
+      margin-bottom: 5em; }
     .classes .list-of-classes p {
       font-size: 1.2rem;
       line-height: 1.5; }
 
 /* END OF CLASSES */
-.facilities .facilities-container .gallery {
+.facilities-container .gallery {
   display: grid;
-  grid-template-columns: repeat(8, 1fr); }
-  .facilities .facilities-container .gallery img {
+  grid-template-columns: repeat(8, 1fr);
+  height: auto; }
+  .facilities-container .gallery img {
     max-width: 100%;
-    height: 18rem; }
-  .facilities .facilities-container .gallery img:first-child {
+    min-height: 18rem; }
+  .facilities-container .gallery img:first-child {
     grid-row: 1/2;
     grid-column: 1/2; }
-  .facilities .facilities-container .gallery img:nth-child(2) {
+  .facilities-container .gallery img:nth-child(2) {
     grid-row: 2/4;
     grid-column: 1/2; }
-  .facilities .facilities-container .gallery img:nth-child(3) {
+  .facilities-container .gallery img:nth-child(3) {
     grid-row: 1/2;
     grid-column: 2/4; }
-  .facilities .facilities-container .gallery img:nth-child(4) {
+  .facilities-container .gallery img:nth-child(4) {
     grid-row: 2/4;
     grid-column: 2/3; }
-  .facilities .facilities-container .gallery img:nth-child(5) {
+  .facilities-container .gallery img:nth-child(5) {
     grid-row: 2/4;
     grid-column: 3/4; }
-  .facilities .facilities-container .gallery img:nth-child(6) {
+  .facilities-container .gallery img:nth-child(6) {
     grid-row: 1/2;
     grid-column: 4/5; }
-  .facilities .facilities-container .gallery img:nth-child(7) {
+  .facilities-container .gallery img:nth-child(7) {
     grid-row: 1/2;
     grid-column: 5/6; }
-  .facilities .facilities-container .gallery img:nth-child(8) {
+  .facilities-container .gallery img:nth-child(8) {
     grid-row: 2/4;
     grid-column: 4/6; }
-  .facilities .facilities-container .gallery img:nth-child(9) {
+  .facilities-container .gallery img:nth-child(9) {
     grid-row: 1/2;
     grid-column: 6/8; }
-  .facilities .facilities-container .gallery img:nth-child(10) {
+  .facilities-container .gallery img:nth-child(10) {
     grid-row: 2/4;
     grid-column: 6/7; }
-  .facilities .facilities-container .gallery img:nth-child(11) {
+  .facilities-container .gallery img:nth-child(11) {
     grid-row: 2/4;
     grid-column: 7/8; }
-  .facilities .facilities-container .gallery img:nth-child(12) {
+  .facilities-container .gallery img:nth-child(12) {
     grid-row: 1/2;
     grid-column: 8/9; }
-  .facilities .facilities-container .gallery img:nth-child(13) {
+  .facilities-container .gallery img:nth-child(13) {
     grid-row: 2/4;
     grid-column: 8/9; }
 
+.facilities .slideshow {
+  display: none; }
+
+@media screen and (max-width: 900px) {
+  .facilities-container .gallery {
+    display: none; }
+  .facilities-container .slideshow {
+    display: flex; }
+    .facilities-container .slideshow .slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background-color: black;
+      width: 100%; }
+      .facilities-container .slideshow .slide i {
+        color: white;
+        position: absolute;
+        font-size: 4rem; }
+        .facilities-container .slideshow .slide i:first-child {
+          left: 20px; }
+        .facilities-container .slideshow .slide i:nth-child(3) {
+          right: 20px; }
+      .facilities-container .slideshow .slide-image img {
+        max-width: 100%;
+        max-height: 30rem;
+        display: none; } }
+
+.show {
+  display: block !important; }
+
 .quote {
-  height: 40rem; }
+  height: auto;
+  padding: 5em 0; }
   .quote .quote-container {
     display: flex;
     flex-direction: column;
@@ -385,18 +533,11 @@ h4 {
     padding: 4em;
     width: 70%; }
     .quote .quote-container h2 {
-      font-size: 5rem;
       margin-bottom: 1rem; }
-    .quote .quote-container p {
-      font-size: 1.5rem;
-      line-height: 1.8; }
 
 .cta {
   background: linear-gradient(0deg, rgba(41, 41, 41, 0.8), rgba(41, 41, 41, 0.8)), url("../img/cta.jpg") no-repeat center/cover;
-  height: 40rem;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+  padding: 10em 0; }
   .cta .cta-container {
     padding: 4em;
     margin: auto;
@@ -404,7 +545,6 @@ h4 {
     text-align: center; }
     .cta .cta-container h2 {
       color: white;
-      font-size: 5rem;
       margin-bottom: 1em; }
     .cta .cta-container a {
       color: #272727;
@@ -415,26 +555,24 @@ h4 {
       font-weight: 700; }
 
 .contact {
-  height: 40rem; }
+  height: auto;
+  padding: 2em 0; }
   .contact .contact-container {
     padding: 4em;
     margin: auto;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     grid-gap: 2em; }
     .contact .contact-container .video {
       display: flex;
       flex-direction: column;
       position: relative;
-      height: 100%; }
+      height: auto; }
       .contact .contact-container .video iframe {
-        height: 360px; }
+        min-height: 360px; }
     .contact .contact-container .contact-form h2 {
-      font-size: 5rem;
       margin-bottom: 2rem; }
-    .contact .contact-container .contact-form form .label-title {
-      font-size: 1.5rem; }
     .contact .contact-container .contact-form form input {
       padding: 0.2em;
       font-size: 1.6rem;
@@ -446,7 +584,8 @@ h4 {
       .contact .contact-container .contact-form form input:focus {
         background-color: white; }
     .contact .contact-container .contact-form form .name {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
       margin-bottom: 2em; }
       .contact .contact-container .contact-form form .name .first-name {
         display: flex;
@@ -479,11 +618,7 @@ footer {
     padding: 4em;
     color: white; }
     footer .footer-container .sched h2 {
-      font-size: 5rem;
       margin-bottom: 1rem; }
-    footer .footer-container .sched p {
-      font-size: 1.5rem;
-      line-height: 1.8; }
     footer .footer-container .logo {
       display: flex;
       justify-content: flex-end;
@@ -491,3 +626,24 @@ footer {
       font-size: 2.4rem;
       letter-spacing: 0.5rem;
       color: white; }
+
+.image-lightbox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; }
+  .image-lightbox .background {
+    background-color: rgba(0, 0, 0, 0.75); }
+    .image-lightbox .background .image {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .image-lightbox .background .image img {
+        max-width: 100%;
+        max-height: 30rem; }
+
+.show {
+  display: block; }
