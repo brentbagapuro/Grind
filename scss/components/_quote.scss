@@ -1,7 +1,7 @@
 .quote {
   height: auto;
   padding: 5em 0;
-  .quote-container {
+  &-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,6 +11,15 @@
 
     h2 {
       margin-bottom: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .quote {
+    &-container {
+      width: 100%;
+      padding: 2em;
     }
   }
 }

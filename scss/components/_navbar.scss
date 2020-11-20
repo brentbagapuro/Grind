@@ -65,6 +65,7 @@
     background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
     z-index: 999;
+    padding: 2em;
 
     .nav-toggle {
       display: none;
@@ -133,18 +134,19 @@
 
       .nav-links ul {
         display: block;
-        margin-right: 5em;
+        margin-right: 2em;
         margin-top: 1em;
 
         li {
           margin-bottom: 3em;
           opacity: 0;
           transition: opacity 150ms ease-in-out;
+          text-align: end;
         }
       }
 
       .nav-ext {
-        margin-right: 5em;
+        margin-right: 2em;
         opacity: 0;
         transition: opacity 150ms ease-in-out;
       }

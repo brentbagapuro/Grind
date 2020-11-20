@@ -28,3 +28,11 @@ footer {
     }
   }
 }
+
+@media screen and (max-width: 900px) {
+  footer {
+    .footer-container {
+      padding: 2em;
+    }
+  }
+}

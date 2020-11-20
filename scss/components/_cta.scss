@@ -7,7 +7,7 @@
     url("../img/cta.jpg") no-repeat center/cover;
   padding: 10em 0;
 
-  .cta-container {
+  &-container {
     @include container;
     text-align: center;
 
@@ -18,6 +18,16 @@
 
     a {
       @include primary-button;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .cta {
+    padding: 4em 0;
+
+    &-container {
+      padding: 2em 2em !important;
     }
   }
 }

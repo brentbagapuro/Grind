@@ -1,7 +1,7 @@
 .contact {
   height: auto;
   padding: 2em 0;
-  .contact-container {
+  &-container {
     @include container;
     display: grid;
     //grid-template-columns: repeat(2, 1fr);
@@ -69,6 +69,67 @@
             text-decoration: none;
             text-align: center;
             cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contact {
+    &-container {
+      padding: 2em !important;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+
+      .contact-form {
+        h2 {
+          margin-bottom: 2rem;
+        }
+
+        form {
+          input {
+            padding: 0.2em;
+            font-size: 1.6rem;
+            background-color: #e4e4e4;
+            border: 1px solid #b6b6b6;
+            margin-right: 0;
+            margin-bottom: 0.5em;
+
+            &:focus {
+              background-color: white;
+            }
+          }
+
+          .name {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2em;
+
+            .first-name {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+            }
+
+            .last-name {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+            }
+          }
+
+          .form-submit {
+            .btn-submit {
+              color: $font-color;
+              background-color: $primary-color;
+              padding: 1rem 2rem;
+              text-decoration: none;
+              text-align: center;
+              cursor: pointer;
+              width: 100%;
+            }
           }
         }
       }

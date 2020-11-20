@@ -2,7 +2,7 @@
   height: auto;
   padding: 2em 0;
 
-  .classes-container {
+  &-container {
     @include container;
     display: grid;
     //grid-template-columns: repeat(2, 1fr);
@@ -33,3 +33,30 @@
     }
   }
 } /* END OF CLASSES */
+
+@media screen and (max-width: 900px) {
+  .classes {
+    &-container {
+      padding: 2em !important;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    }
+
+    .list-of-classes {
+      padding: 2em !important;
+
+      .class-item {
+        &__desc {
+          margin-bottom: 4em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .classes {
+    &-container {
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    }
+  }
+}

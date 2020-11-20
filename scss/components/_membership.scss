@@ -1,19 +1,11 @@
 .membership {
-  height: auto;
   padding: 2em 0;
 
-  .membership-container {
+  &-container {
     @include container;
     display: grid;
-    //grid-template-columns: repeat(2, 1fr);
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     grid-gap: 2em;
-
-    /*.mem-header {
-      h2 {
-        font-size: 5rem;
-      }
-    }*/
 
     .mem-desc {
       .desc-par {
@@ -41,3 +33,20 @@
     }
   }
 } /* END OF MEMBERSHIP */
+
+@media screen and (max-width: 900px) {
+  .membership {
+    &-container {
+      padding: 2em !important;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .membership {
+    &-container {
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    }
+  }
+}

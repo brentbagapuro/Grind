@@ -7,7 +7,7 @@
     url("../img/battle-rop.jpg") no-repeat center/cover;
   height: auto;
 
-  .programs-container {
+  &-container {
     @include container;
 
     .programs-heading {
@@ -286,74 +286,84 @@
     display: none !important;
   }
 
-  .media-cards {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-    grid-gap: 2em;
+  .programs {
+    &-container {
+      padding: 1em !important;
 
-    .card {
-      position: relative;
-      width: 100%;
-      margin: 0 1em;
-
-      .card-img {
-        &__1 {
-          height: 15rem;
-          background: linear-gradient(
-              to right bottom,
-              rgba(153, 153, 212, 0.7),
-              rgba(0, 0, 255, 0.9)
-            ),
-            url("../img/strength.jpg") no-repeat center/cover;
-        }
-
-        &__2 {
-          height: 15rem;
-          background: linear-gradient(
-              to right bottom,
-              rgba(159, 214, 168, 0.7),
-              rgba(0, 255, 119, 0.9)
-            ),
-            url("../img/endurance.jpg") no-repeat center/cover;
-        }
-
-        &__3 {
-          height: 15rem;
-          background: linear-gradient(
-              to right bottom,
-              hsla(48, 57%, 75%, 0.7),
-              hsla(48, 94%, 52%, 0.9)
-            ),
-            url("../img/calisthenics.jpg") no-repeat center/cover;
-        }
-
-        &__4 {
-          height: 15rem;
-          background: linear-gradient(
-              to right bottom,
-              rgba(223, 163, 163, 0.7),
-              rgba(255, 0, 0, 0.9)
-            ),
-            url("../img/body-building.jpg") no-repeat center/cover;
-        }
+      .programs-heading {
+        margin-top: 2em;
       }
 
-      .content {
-        background-color: white;
-        color: $font-color;
-        padding: 2.5em;
-        min-height: 24rem;
+      .media-cards {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+        grid-gap: 2em;
+        margin-bottom: 4em;
 
-        h4 {
-          margin-bottom: 1em;
-        }
+        .card {
+          position: relative;
+          margin: 0 1em;
 
-        p {
-          margin-bottom: 2em;
-        }
+          .card-img {
+            &__1 {
+              height: 10rem;
+              background: linear-gradient(
+                  to right bottom,
+                  rgba(153, 153, 212, 0.7),
+                  rgba(0, 0, 255, 0.9)
+                ),
+                url("../img/strength.jpg") no-repeat center/cover;
+            }
 
-        a {
-          @include secondary-button;
+            &__2 {
+              height: 15rem;
+              background: linear-gradient(
+                  to right bottom,
+                  rgba(159, 214, 168, 0.7),
+                  rgba(0, 255, 119, 0.9)
+                ),
+                url("../img/endurance.jpg") no-repeat center/cover;
+            }
+
+            &__3 {
+              height: 15rem;
+              background: linear-gradient(
+                  to right bottom,
+                  hsla(48, 57%, 75%, 0.7),
+                  hsla(48, 94%, 52%, 0.9)
+                ),
+                url("../img/calisthenics.jpg") no-repeat center/cover;
+            }
+
+            &__4 {
+              height: 15rem;
+              background: linear-gradient(
+                  to right bottom,
+                  rgba(223, 163, 163, 0.7),
+                  rgba(255, 0, 0, 0.9)
+                ),
+                url("../img/body-building.jpg") no-repeat center/cover;
+            }
+          }
+
+          .content {
+            background-color: white;
+            color: $font-color;
+            padding: 1.5em;
+            min-height: 22rem;
+
+            h4 {
+              margin-bottom: 1em;
+            }
+
+            p {
+              margin-bottom: 2em;
+            }
+
+            a {
+              @include secondary-button;
+            }
+          }
         }
       }
     }

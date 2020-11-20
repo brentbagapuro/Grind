@@ -8,7 +8,7 @@
     url("../img/barbell-lift.jpg") no-repeat center/cover;
   height: 50rem;
 
-  .banner-container {
+  &-container {
     padding: 4em;
     display: flex;
     align-items: center;
@@ -28,3 +28,11 @@
     }
   }
 } /* END OF BANNER */
+
+@media screen and (max-width: 900px) {
+  .banner {
+    &-container {
+      padding: 2em !important;
+    }
+  }
+}

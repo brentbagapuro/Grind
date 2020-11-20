@@ -35,7 +35,7 @@ p {
 @media screen and (max-width: 700px) {
   h1,
   h2 {
-    font-size: 4rem; }
+    font-size: 3rem; }
   h4 {
     font-size: 1.6rem; }
   h6 {
@@ -94,7 +94,8 @@ p {
   .navbar {
     background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
-    z-index: 999; }
+    z-index: 999;
+    padding: 2em; }
     .navbar .nav-toggle {
       display: none; }
     .navbar .nav-toggle-label {
@@ -143,14 +144,15 @@ p {
       transition: transform 400ms ease-in-out; }
       .navbar nav .nav-links ul {
         display: block;
-        margin-right: 5em;
+        margin-right: 2em;
         margin-top: 1em; }
         .navbar nav .nav-links ul li {
           margin-bottom: 3em;
           opacity: 0;
-          transition: opacity 150ms ease-in-out; }
+          transition: opacity 150ms ease-in-out;
+          text-align: end; }
       .navbar nav .nav-ext {
-        margin-right: 5em;
+        margin-right: 2em;
         opacity: 0;
         transition: opacity 150ms ease-in-out; } }
 
@@ -158,77 +160,84 @@ p {
   display: flex;
   background: linear-gradient(0deg, rgba(41, 41, 41, 0.8), rgba(41, 41, 41, 0.8)), url("../img/barbell-lift.jpg") no-repeat center/cover;
   height: 50rem; }
-  .banner .banner-container {
+  .banner-container {
     padding: 4em;
     display: flex;
     align-items: center;
     width: 100%; }
-    .banner .banner-container .heading-wrapper {
+    .banner-container .heading-wrapper {
       width: 50rem;
       color: white;
       /* a {
           @include primary-button;
         } */ }
-      .banner .banner-container .heading-wrapper h1 {
+      .banner-container .heading-wrapper h1 {
         margin-bottom: 1rem; }
 
 /* END OF BANNER */
+@media screen and (max-width: 900px) {
+  .banner-container {
+    padding: 2em !important; } }
+
 .membership {
-  height: auto;
   padding: 2em 0; }
-  .membership .membership-container {
+  .membership-container {
     padding: 4em;
     margin: auto;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    grid-gap: 2em;
-    /*.mem-header {
-      h2 {
-        font-size: 5rem;
-      }
-    }*/ }
-    .membership .membership-container .mem-desc .desc-par {
+    grid-gap: 2em; }
+    .membership-container .mem-desc .desc-par {
       margin-bottom: 2.5rem; }
-    .membership .membership-container .mem-desc .desc-prices {
+    .membership-container .mem-desc .desc-prices {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       padding-right: 25%; }
-      .membership .membership-container .mem-desc .desc-prices .price1 {
+      .membership-container .mem-desc .desc-prices .price1 {
         margin-right: 2rem; }
-      .membership .membership-container .mem-desc .desc-prices .price-header {
+      .membership-container .mem-desc .desc-prices .price-header {
         margin-top: 2rem; }
-      .membership .membership-container .mem-desc .desc-prices h5 {
+      .membership-container .mem-desc .desc-prices h5 {
         margin-bottom: 0.2rem; }
 
 /* END OF MEMBERSHIP */
+@media screen and (max-width: 900px) {
+  .membership-container {
+    padding: 2em !important;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); } }
+
+@media screen and (max-width: 500px) {
+  .membership-container {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); } }
+
 .programs {
   background: linear-gradient(0deg, rgba(41, 41, 41, 0.8), rgba(41, 41, 41, 0.8)), url("../img/battle-rop.jpg") no-repeat center/cover;
   height: auto; }
-  .programs .programs-container {
+  .programs-container {
     padding: 4em;
     margin: auto;
     width: 100%; }
-    .programs .programs-container .programs-heading {
+    .programs-container .programs-heading {
       color: #fff;
       margin-bottom: 4em;
       text-align: center;
       font-size: 1.5rem; }
-    .programs .programs-container .media-cards {
+    .programs-container .media-cards {
       display: none; }
-    .programs .programs-container .flip-cards {
+    .programs-container .flip-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
       grid-gap: 2em; }
-      .programs .programs-container .flip-cards .card {
+      .programs-container .flip-cards .card {
         perspective: 200rem;
         -moz-perspective: 150rem;
         -o-persepctive: 150rem;
         position: relative;
         width: 100%;
         margin: 0 1em; }
-        .programs .programs-container .flip-cards .card .side {
+        .programs-container .flip-cards .card .side {
           color: #fff;
           transition: all 0.5s ease;
           position: absolute;
@@ -238,11 +247,11 @@ p {
           backface-visibility: hidden;
           border-radius: 3px;
           box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
-          .programs .programs-container .flip-cards .card .side_front-1 {
+          .programs-container .flip-cards .card .side_front-1 {
             position: relative;
             background: linear-gradient(to right bottom, #9999d4, blue);
             padding: 3px; }
-            .programs .programs-container .flip-cards .card .side_front-1 .content {
+            .programs-container .flip-cards .card .side_front-1 .content {
               padding: calc(75% - 6px) 1em;
               min-height: 18rem;
               min-width: 13rem;
@@ -250,13 +259,13 @@ p {
               display: flex;
               justify-content: center;
               align-items: center; }
-              .programs .programs-container .flip-cards .card .side_front-1 .content h6 {
+              .programs-container .flip-cards .card .side_front-1 .content h6 {
                 letter-spacing: 0.1rem; }
-          .programs .programs-container .flip-cards .card .side_front-2 {
+          .programs-container .flip-cards .card .side_front-2 {
             position: relative;
             background: linear-gradient(to right bottom, #9fd6a8, #00ff77);
             padding: 3px; }
-            .programs .programs-container .flip-cards .card .side_front-2 .content {
+            .programs-container .flip-cards .card .side_front-2 .content {
               padding: calc(75% - 6px) 1em;
               min-height: 18rem;
               min-width: 13rem;
@@ -264,13 +273,13 @@ p {
               display: flex;
               justify-content: center;
               align-items: center; }
-              .programs .programs-container .flip-cards .card .side_front-2 .content h6 {
+              .programs-container .flip-cards .card .side_front-2 .content h6 {
                 letter-spacing: 0.1rem; }
-          .programs .programs-container .flip-cards .card .side_front-3 {
+          .programs-container .flip-cards .card .side_front-3 {
             position: relative;
             background: linear-gradient(to right bottom, #e4d59b, #f8ca12);
             padding: 3px; }
-            .programs .programs-container .flip-cards .card .side_front-3 .content {
+            .programs-container .flip-cards .card .side_front-3 .content {
               padding: calc(75% - 6px) 1em;
               min-height: 18rem;
               min-width: 13rem;
@@ -278,13 +287,13 @@ p {
               display: flex;
               justify-content: center;
               align-items: center; }
-              .programs .programs-container .flip-cards .card .side_front-3 .content h6 {
+              .programs-container .flip-cards .card .side_front-3 .content h6 {
                 letter-spacing: 0.1rem; }
-          .programs .programs-container .flip-cards .card .side_front-4 {
+          .programs-container .flip-cards .card .side_front-4 {
             position: relative;
             background: linear-gradient(to right bottom, #dfa3a3, red);
             padding: 3px; }
-            .programs .programs-container .flip-cards .card .side_front-4 .content {
+            .programs-container .flip-cards .card .side_front-4 .content {
               padding: calc(75% - 6px) 1em;
               min-height: 18rem;
               min-width: 13rem;
@@ -293,11 +302,11 @@ p {
               justify-content: center;
               align-items: center;
               text-align: center; }
-              .programs .programs-container .flip-cards .card .side_front-4 .content h6 {
+              .programs-container .flip-cards .card .side_front-4 .content h6 {
                 letter-spacing: 0.1rem; }
-          .programs .programs-container .flip-cards .card .side_back {
+          .programs-container .flip-cards .card .side_back {
             transform: rotateY(180deg); }
-            .programs .programs-container .flip-cards .card .side_back-1 {
+            .programs-container .flip-cards .card .side_back-1 {
               height: 100%;
               display: flex;
               flex-direction: column;
@@ -306,7 +315,7 @@ p {
               padding: 1.5em;
               overflow: hidden;
               background: linear-gradient(to right bottom, #9999d4, blue); }
-              .programs .programs-container .flip-cards .card .side_back-1 a {
+              .programs-container .flip-cards .card .side_back-1 a {
                 color: #fff;
                 background-color: #2a2a2a;
                 padding: 1rem 2.5rem;
@@ -314,9 +323,9 @@ p {
                 text-align: center;
                 font-weight: 700;
                 border-radius: 50px; }
-              .programs .programs-container .flip-cards .card .side_back-1 p {
+              .programs-container .flip-cards .card .side_back-1 p {
                 text-align: center; }
-            .programs .programs-container .flip-cards .card .side_back-2 {
+            .programs-container .flip-cards .card .side_back-2 {
               height: 100%;
               display: flex;
               flex-direction: column;
@@ -325,7 +334,7 @@ p {
               padding: 1.5em;
               overflow: hidden;
               background: linear-gradient(to right bottom, #9fd6a8, #00ff77); }
-              .programs .programs-container .flip-cards .card .side_back-2 a {
+              .programs-container .flip-cards .card .side_back-2 a {
                 color: #fff;
                 background-color: #2a2a2a;
                 padding: 1rem 2.5rem;
@@ -333,9 +342,9 @@ p {
                 text-align: center;
                 font-weight: 700;
                 border-radius: 50px; }
-              .programs .programs-container .flip-cards .card .side_back-2 p {
+              .programs-container .flip-cards .card .side_back-2 p {
                 text-align: center; }
-            .programs .programs-container .flip-cards .card .side_back-3 {
+            .programs-container .flip-cards .card .side_back-3 {
               height: 100%;
               display: flex;
               flex-direction: column;
@@ -344,7 +353,7 @@ p {
               padding: 1.5em;
               overflow: hidden;
               background: linear-gradient(to right bottom, #e4d59b, #f8ca12); }
-              .programs .programs-container .flip-cards .card .side_back-3 a {
+              .programs-container .flip-cards .card .side_back-3 a {
                 color: #fff;
                 background-color: #2a2a2a;
                 padding: 1rem 2.5rem;
@@ -352,9 +361,9 @@ p {
                 text-align: center;
                 font-weight: 700;
                 border-radius: 50px; }
-              .programs .programs-container .flip-cards .card .side_back-3 p {
+              .programs-container .flip-cards .card .side_back-3 p {
                 text-align: center; }
-            .programs .programs-container .flip-cards .card .side_back-4 {
+            .programs-container .flip-cards .card .side_back-4 {
               height: 100%;
               display: flex;
               flex-direction: column;
@@ -363,7 +372,7 @@ p {
               padding: 1.5em;
               overflow: hidden;
               background: linear-gradient(to right bottom, #dfa3a3, red); }
-              .programs .programs-container .flip-cards .card .side_back-4 a {
+              .programs-container .flip-cards .card .side_back-4 a {
                 color: #fff;
                 background-color: #2a2a2a;
                 padding: 1rem 2.5rem;
@@ -371,57 +380,61 @@ p {
                 text-align: center;
                 font-weight: 700;
                 border-radius: 50px; }
-              .programs .programs-container .flip-cards .card .side_back-4 p {
+              .programs-container .flip-cards .card .side_back-4 p {
                 text-align: center; }
-        .programs .programs-container .flip-cards .card:hover .side_front {
+        .programs-container .flip-cards .card:hover .side_front {
           transform: rotateY(-180deg); }
-        .programs .programs-container .flip-cards .card:hover .side_back {
+        .programs-container .flip-cards .card:hover .side_back {
           transform: rotateY(0); }
 
 @media screen and (max-width: 1025px) {
   .flip-cards {
     display: none !important; }
-  .media-cards {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-    grid-gap: 2em; }
-    .media-cards .card {
-      position: relative;
-      width: 100%;
-      margin: 0 1em; }
-      .media-cards .card .card-img__1 {
-        height: 15rem;
-        background: linear-gradient(to right bottom, rgba(153, 153, 212, 0.7), rgba(0, 0, 255, 0.9)), url("../img/strength.jpg") no-repeat center/cover; }
-      .media-cards .card .card-img__2 {
-        height: 15rem;
-        background: linear-gradient(to right bottom, rgba(159, 214, 168, 0.7), rgba(0, 255, 119, 0.9)), url("../img/endurance.jpg") no-repeat center/cover; }
-      .media-cards .card .card-img__3 {
-        height: 15rem;
-        background: linear-gradient(to right bottom, rgba(228, 213, 155, 0.7), rgba(248, 202, 18, 0.9)), url("../img/calisthenics.jpg") no-repeat center/cover; }
-      .media-cards .card .card-img__4 {
-        height: 15rem;
-        background: linear-gradient(to right bottom, rgba(223, 163, 163, 0.7), rgba(255, 0, 0, 0.9)), url("../img/body-building.jpg") no-repeat center/cover; }
-      .media-cards .card .content {
-        background-color: white;
-        color: #272727;
-        padding: 2.5em;
-        min-height: 24rem; }
-        .media-cards .card .content h4 {
-          margin-bottom: 1em; }
-        .media-cards .card .content p {
-          margin-bottom: 2em; }
-        .media-cards .card .content a {
-          color: #fff;
-          background-color: #2a2a2a;
-          padding: 1rem 2.5rem;
-          text-decoration: none;
-          text-align: center;
-          font-weight: 700; } }
+  .programs-container {
+    padding: 1em !important; }
+    .programs-container .programs-heading {
+      margin-top: 2em; }
+    .programs-container .media-cards {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+      grid-gap: 2em;
+      margin-bottom: 4em; }
+      .programs-container .media-cards .card {
+        position: relative;
+        margin: 0 1em; }
+        .programs-container .media-cards .card .card-img__1 {
+          height: 10rem;
+          background: linear-gradient(to right bottom, rgba(153, 153, 212, 0.7), rgba(0, 0, 255, 0.9)), url("../img/strength.jpg") no-repeat center/cover; }
+        .programs-container .media-cards .card .card-img__2 {
+          height: 15rem;
+          background: linear-gradient(to right bottom, rgba(159, 214, 168, 0.7), rgba(0, 255, 119, 0.9)), url("../img/endurance.jpg") no-repeat center/cover; }
+        .programs-container .media-cards .card .card-img__3 {
+          height: 15rem;
+          background: linear-gradient(to right bottom, rgba(228, 213, 155, 0.7), rgba(248, 202, 18, 0.9)), url("../img/calisthenics.jpg") no-repeat center/cover; }
+        .programs-container .media-cards .card .card-img__4 {
+          height: 15rem;
+          background: linear-gradient(to right bottom, rgba(223, 163, 163, 0.7), rgba(255, 0, 0, 0.9)), url("../img/body-building.jpg") no-repeat center/cover; }
+        .programs-container .media-cards .card .content {
+          background-color: white;
+          color: #272727;
+          padding: 1.5em;
+          min-height: 22rem; }
+          .programs-container .media-cards .card .content h4 {
+            margin-bottom: 1em; }
+          .programs-container .media-cards .card .content p {
+            margin-bottom: 2em; }
+          .programs-container .media-cards .card .content a {
+            color: #fff;
+            background-color: #2a2a2a;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 700; } }
 
 .classes {
   height: auto;
   padding: 2em 0; }
-  .classes .classes-container {
+  .classes-container {
     padding: 4em;
     margin: auto;
     width: 100%;
@@ -444,6 +457,19 @@ p {
       line-height: 1.5; }
 
 /* END OF CLASSES */
+@media screen and (max-width: 900px) {
+  .classes-container {
+    padding: 2em !important;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); }
+  .classes .list-of-classes {
+    padding: 2em !important; }
+    .classes .list-of-classes .class-item__desc {
+      margin-bottom: 4em; } }
+
+@media screen and (max-width: 500px) {
+  .classes-container {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); } }
+
 .facilities-container .gallery {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -525,28 +551,33 @@ p {
 .quote {
   height: auto;
   padding: 5em 0; }
-  .quote .quote-container {
+  .quote-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
     padding: 4em;
     width: 70%; }
-    .quote .quote-container h2 {
+    .quote-container h2 {
       margin-bottom: 1rem; }
+
+@media screen and (max-width: 900px) {
+  .quote-container {
+    width: 100%;
+    padding: 2em; } }
 
 .cta {
   background: linear-gradient(0deg, rgba(41, 41, 41, 0.8), rgba(41, 41, 41, 0.8)), url("../img/cta.jpg") no-repeat center/cover;
   padding: 10em 0; }
-  .cta .cta-container {
+  .cta-container {
     padding: 4em;
     margin: auto;
     width: 100%;
     text-align: center; }
-    .cta .cta-container h2 {
+    .cta-container h2 {
       color: white;
       margin-bottom: 1em; }
-    .cta .cta-container a {
+    .cta-container a {
       color: #272727;
       background-color: #f8ca12;
       padding: 1rem 1rem;
@@ -554,26 +585,32 @@ p {
       text-align: center;
       font-weight: 700; }
 
+@media screen and (max-width: 900px) {
+  .cta {
+    padding: 4em 0; }
+    .cta-container {
+      padding: 2em 2em !important; } }
+
 .contact {
   height: auto;
   padding: 2em 0; }
-  .contact .contact-container {
+  .contact-container {
     padding: 4em;
     margin: auto;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     grid-gap: 2em; }
-    .contact .contact-container .video {
+    .contact-container .video {
       display: flex;
       flex-direction: column;
       position: relative;
       height: auto; }
-      .contact .contact-container .video iframe {
+      .contact-container .video iframe {
         min-height: 360px; }
-    .contact .contact-container .contact-form h2 {
+    .contact-container .contact-form h2 {
       margin-bottom: 2rem; }
-    .contact .contact-container .contact-form form input {
+    .contact-container .contact-form form input {
       padding: 0.2em;
       font-size: 1.6rem;
       background-color: #e4e4e4;
@@ -581,29 +618,66 @@ p {
       margin-right: 1em;
       margin-top: 0.5em;
       margin-bottom: 0.5em; }
-      .contact .contact-container .contact-form form input:focus {
+      .contact-container .contact-form form input:focus {
         background-color: white; }
-    .contact .contact-container .contact-form form .name {
+    .contact-container .contact-form form .name {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
       margin-bottom: 2em; }
-      .contact .contact-container .contact-form form .name .first-name {
+      .contact-container .contact-form form .name .first-name {
         display: flex;
         flex-direction: column; }
-      .contact .contact-container .contact-form form .name .last-name {
+      .contact-container .contact-form form .name .last-name {
         display: flex;
         flex-direction: column; }
-    .contact .contact-container .contact-form form .email {
+    .contact-container .contact-form form .email {
       display: flex;
       flex-direction: column;
       margin-bottom: 2em; }
-    .contact .contact-container .contact-form form .form-submit .btn-submit {
+    .contact-container .contact-form form .form-submit .btn-submit {
       color: #272727;
       background-color: #f8ca12;
       padding: 1rem 2rem;
       text-decoration: none;
       text-align: center;
       cursor: pointer; }
+
+@media screen and (max-width: 600px) {
+  .contact-container {
+    padding: 2em !important;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); }
+    .contact-container .contact-form h2 {
+      margin-bottom: 2rem; }
+    .contact-container .contact-form form input {
+      padding: 0.2em;
+      font-size: 1.6rem;
+      background-color: #e4e4e4;
+      border: 1px solid #b6b6b6;
+      margin-right: 0;
+      margin-bottom: 0.5em; }
+      .contact-container .contact-form form input:focus {
+        background-color: white; }
+    .contact-container .contact-form form .name {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2em; }
+      .contact-container .contact-form form .name .first-name {
+        display: flex;
+        flex-direction: column;
+        width: 100%; }
+      .contact-container .contact-form form .name .last-name {
+        display: flex;
+        flex-direction: column;
+        width: 100%; }
+    .contact-container .contact-form form .form-submit .btn-submit {
+      color: #272727;
+      background-color: #f8ca12;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      width: 100%; } }
 
 footer {
   height: 30rem;
@@ -626,6 +700,10 @@ footer {
       font-size: 2.4rem;
       letter-spacing: 0.5rem;
       color: white; }
+
+@media screen and (max-width: 900px) {
+  footer .footer-container {
+    padding: 2em; } }
 
 .image-lightbox {
   position: fixed;
